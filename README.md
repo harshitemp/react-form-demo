@@ -4,6 +4,11 @@
 Create a form with an input field and handle the `onChange` event to update state dynamically using React.
 
 ---
+## Screenshots
+
+Here’s a preview of the app:
+
+![App Screenshot](public/ss.png)
 
 ## 🛠 Steps to Run
 
