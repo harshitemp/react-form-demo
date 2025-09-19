@@ -1,12 +1,38 @@
-# React + Vite
+# 📘 Experiment 5: Form with onChange Event to Update State Dynamically (CO2, CO4)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🎯 Aim  
+Create a form with an input field and handle the `onChange` event to update state dynamically using React.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Steps to Run
 
-## Expanding the ESLint configuration
+### 1. Create a new component `FormComponent.jsx`  
+📂 `src/components/FormComponent.jsx`
+```jsx
+import { useState } from "react";
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+function FormComponent() {
+  // State for storing input value
+  const [name, setName] = useState("");
+
+  // Handle input change
+  const handleChange = (event) => {
+    setName(event.target.value);
+  };
+
+  return (
+    <div style={{ textAlign: "center", marginTop: "50px" }}>
+      <h2>React Form Example</h2>
+      <input
+        type="text"
+        placeholder="Enter your name"
+        value={name}
+        onChange={handleChange}
+      />
+      <p>Hello, {name ? name : "Guest"} 👋</p>
+    </div>
+  );
+}
+
+export default FormComponent;
